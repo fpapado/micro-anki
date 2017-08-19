@@ -1,11 +1,10 @@
-module.exports = handleRequest;
-
 const {send, sendError, json} = require('micro');
 const fs = require('fs');
 const AnkiExport = require('anki-apkg-export').default;
-// const microCors = require('micro-cors');
+const microCors = require('micro-cors');
 
-// const cors = microCors({allowMethods: ['GET', 'POST']});
+const cors = microCors({allowMethods: ['POST']});
+
 async function saveAnki(cards) {
   const apkg = new AnkiExport('deck-name');
 
@@ -26,3 +25,5 @@ async function handleRequest(req, res) {
 
   send(res, 200, zip);
 }
+
+module.exports = cors(handleRequest);
