@@ -1,2 +1,12 @@
 # `micro-anki`
-Anki exports as a microservice
+Anki apkg export as a microservice.
+
+```json
+{
+  "cards": [
+    { "front": "some word",
+      "back": "translation"
+    }
+  ]
+}
+```

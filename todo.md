@@ -1,4 +1,3 @@
 # TODO
-- [] Validation of input
 - [] Tests
-- [] Name option
+- [] Name option?
