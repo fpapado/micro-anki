@@ -16,14 +16,14 @@ async function saveAnki(cards) {
 }
 
 async function handleRequest(req, res) {
-  // {
-  // 'cards:'[{front: '...', back: '...'}];
-  // }
   const data = await json(req);
 
-  let zip = await saveAnki(data.cards);
-
-  send(res, 200, zip);
+  if (!data.cards) {
+    send(res, 400);
+  } else {
+    let zip = await saveAnki(data.cards);
+    send(res, 200, zip);
+  }
 }
 
 module.exports = cors(handleRequest);

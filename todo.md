@@ -1,6 +1,4 @@
 # TODO
-- [] CORS
-- [] Rate limiting
+- [] Validation of input
 - [] Tests
 - [] Name option
-- [] Validation of input
