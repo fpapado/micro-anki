@@ -9,7 +9,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "test": "ava",
+    "test": "xo && ava",
     "start": "micro",
     "dev": "micro-dev"
   },
@@ -26,5 +26,8 @@
     "micro-dev": "^1.2.1",
     "test-listen": "^1.0.2",
     "xo": "^0.18.2"
+  },
+  "xo": {
+    "space": true
   }
 }
