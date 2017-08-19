@@ -22,6 +22,8 @@ async function handleRequest(req, res) {
   }
 
   const zip = await saveAnki(data.cards);
+
+  res.setHeader('Content-Disposition', 'attachment; filename="export.apkg"');
   send(res, 200, zip);
 }
 
