@@ -1,0 +1,7 @@
+{
+  "name": "micro-anki",
+  "alias": "micro-anki",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "micro-anki",
+  "version": "1.0.0",
+  "description": "Anki apkg export as a microservice",
+  "main": "index.js",
+  "dependencies": {
+    "micro": "^8.0.3"
+  },
+  "devDependencies": {
+    "micro-dev": "^1.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "micro",
+    "dev": "micro-dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fpapado/micro-anki.git"
+  },
+  "author": "fpapado",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fpapado/micro-anki/issues"
+  },
+  "homepage": "https://github.com/fpapado/micro-anki#readme"
+}
