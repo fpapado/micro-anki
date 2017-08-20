@@ -4,8 +4,8 @@ const microCors = require('micro-cors');
 
 const cors = microCors({allowMethods: ['POST']});
 
-async function saveAnki(cards) {
-  const apkg = new AnkiExport('deck-name');
+async function saveAnki(deckName, cards) {
+  const apkg = new AnkiExport(deckName);
 
   cards.forEach(card => apkg.addCard(card.front, card.back));
 
@@ -21,9 +21,13 @@ async function handleRequest(req, res) {
     throw createError(400, 'No cards field found');
   }
 
-  const zip = await saveAnki(data.cards);
+  const deckName = data.deckName ? data.deckName : 'micro-anki-deck';
+  const zip = await saveAnki(deckName, data.cards);
 
-  res.setHeader('Content-Disposition', 'attachment; filename="export.apkg"');
+  res.setHeader(
+    'Content-Disposition',
+    `attachment; filename="${deckName}.apkg"`
+  );
   send(res, 200, zip);
 }
 
