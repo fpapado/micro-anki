@@ -20,7 +20,8 @@ $ npm start
     { "front": "some word",
       "back": "translation"
     }
-  ]
+  ],
+  "deckName": "somename"
 }
 ```
 
