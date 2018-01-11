@@ -6,9 +6,7 @@ const cors = microCors({allowMethods: ['POST']});
 
 async function saveAnki(deckName, cards) {
   const apkg = new AnkiExport(deckName);
-
   cards.forEach(card => apkg.addCard(card.front, card.back));
-
   const zip = await apkg.save();
 
   return zip;
